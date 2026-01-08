@@ -2,11 +2,12 @@
 students = []
 
 while True:
-    print("\nStudent Management System")
     print("1. Add Student")
     print("2. View Students")
     print("3. Search Student")
-    print("4. Exit")
+    print("4. Delete Student")
+    print("5. Exit")
+
 
     choice = int(input("Enter your choice: "))
 
@@ -36,8 +37,20 @@ while True:
             print("Student not found")
 
     elif choice == 4:
+        roll = input("Enter roll number to delete: ")
+        for s in students:
+            if s["roll"] == roll:
+                students.remove(s)
+                print("Student deleted successfully")
+                break
+            
+            else:
+                print("Student not found")
+
+    elif choice == 5:
         print("Exiting program")
         break
+
 
     else:
         print("Invalid choice")
